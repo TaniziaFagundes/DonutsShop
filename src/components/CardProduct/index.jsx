@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 const CardProduct = ({ name, key, image, price, colorSchema }) => {
   return (
     <Container key={key}>
-      <img src={`../../assets/ImgProduct/${image}`} alt={image}></img>
+      <img src={image} alt={image}></img>
       <h6>{name}</h6>
       <div>
         <span>R$ {price}</span>

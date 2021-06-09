@@ -1,15 +1,18 @@
-import { Container, Content } from "./styles";
-import Home from "../../components/Menu";
+import { Container, Content, Vitrine } from "./styles";
+import Menu from "../../components/Menu";
 import Footer from "../../components/Footer";
 
 const Cart = () => {
   return (
-    <Container>
-      <Content>
-        <Home />
+    <>
+      <Menu />
+      <Container>
+        <Content>
+          <Vitrine></Vitrine>
+        </Content>
         <Footer />
-      </Content>
-    </Container>
+      </Container>
+    </>
   );
 };
 

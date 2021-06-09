@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   background-color: ${(props) =>
-    props.colorSchema === "solicitar" || props.colorSchema === "adicionar"
+    props.colorSchema === "solicitar" ||
+    props.colorSchema === "adicionar" ||
+    props.colorSchema === "Enviar Pedido"
       ? "#2ECC71"
       : props.colorSchema === "remover"
       ? "#CB5377"

@@ -2,6 +2,12 @@ import styled from "styled-components";
 import Background from "../../assets/Rectangle.svg";
 
 export const Container = styled.div`
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+`;
+
+export const Backgrounds = styled.div`
   background: url(${Background}) no-repeat center;
   background-size: cover;
   background-position-y: top;
@@ -23,7 +29,7 @@ export const Content = styled.div`
   p {
     display: flex;
     align-items: center;
-    margin: 0 auto;
+    margin: 15px auto;
   }
 
   span {
