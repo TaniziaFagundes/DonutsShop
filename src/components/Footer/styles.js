@@ -3,7 +3,8 @@ import Background from "../../assets/Rectangle.svg";
 
 export const Container = styled.div`
   background: url(${Background}) no-repeat center;
-  height: 50vh;
+  background-size: cover;
+  background-position-y: top;
 `;
 
 export const Content = styled.div`
