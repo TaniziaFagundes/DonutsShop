@@ -17,7 +17,14 @@ export const Close = styled.div`
   z-index: 2;
   margin: 0 auto;
   top: 50px;
-  background-color: red;
+
+  button {
+    background-color: transparent;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
+  }
+  img {
+    width: 3rem;
+  }
 `;
 
 export const Content = styled.div`
@@ -35,7 +42,7 @@ export const Content = styled.div`
     width: 220px;
     height: 50px;
     text-align: center;
-    margin: 15px;
+    margin: 3rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 
@@ -44,6 +51,7 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
   }
+
   img {
     width: 20%;
     margin: 5px;
@@ -52,5 +60,23 @@ export const Content = styled.div`
 
   h3 {
     font-size: 1.5rem;
+  }
+`;
+
+export const Input = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem;
+
+  label {
+    margin-bottom: 0.5rem;
+    color: var(--blueBlack);
+    font-size: 1.5rem;
+  }
+  input {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #4e232e93;
   }
 `;

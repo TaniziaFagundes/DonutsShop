@@ -1,7 +1,8 @@
-import { Container, Content, Close } from "./styles";
+import { Container, Content, Close, Input } from "./styles";
 import Button from "../Button";
 import Donnut from "../../assets/donut.svg";
-import fechar from "../../assets/botao-fechar.svg";
+import Closed from "../../assets/close.png";
+
 const PopUpCadastro = ({ solicitar, setSolicitar }) => {
   const handleClosed = () => {
     setSolicitar(false);
@@ -11,7 +12,7 @@ const PopUpCadastro = ({ solicitar, setSolicitar }) => {
     <Container>
       <Close>
         <button onClick={() => handleClosed()}>
-          <img src={fechar} alt="button fechar"></img>
+          <img src={Closed} alt="close"></img>
         </button>
       </Close>
       <Content>
@@ -19,9 +20,13 @@ const PopUpCadastro = ({ solicitar, setSolicitar }) => {
           <img src={Donnut} alt="DOnnut"></img>
           <h3>Estamos quase lá!</h3>
         </div>
-        <div>
-          <Button colorSchema="Enviar Pedido">Enviar Pedido</Button>
-        </div>
+        <Input>
+          <label>Seu Nome</label>
+          <input></input>
+          <Button onClick={() => handleClosed()} colorSchema="Enviar Pedido">
+            Enviar Pedido
+          </Button>
+        </Input>
       </Content>
     </Container>
   ) : (

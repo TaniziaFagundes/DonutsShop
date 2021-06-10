@@ -19,7 +19,7 @@ const Footer = () => {
         <Content>
           <p>
             @ copyright todos os direitos reservados{" "}
-            <span>TaniziaFagundes</span>
+            <span>Tanizia Fagundes</span>
           </p>
         </Content>
       </Backgrounds>
