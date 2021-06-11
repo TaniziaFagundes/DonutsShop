@@ -12,10 +12,15 @@ import img7 from "../../assets/ImgProduct/017.jpeg";
 import img8 from "../../assets/ImgProduct/018.jpeg";
 import img9 from "../../assets/ImgProduct/019.jpeg";
 
+//redux thunk
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addCarrinhoThunk } from "../../store/modules/cart/thunk";
+
 const Products = () => {
-  const product = [
+  const products = [
     {
-      id: 0,
+      id: 9,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img1,
@@ -23,7 +28,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 1,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img2,
@@ -31,7 +36,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 2,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img3,
@@ -39,7 +44,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 3,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img4,
@@ -47,7 +52,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 4,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img5,
@@ -55,7 +60,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 5,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img6,
@@ -63,7 +68,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 6,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img7,
@@ -71,7 +76,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 7,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img8,
@@ -79,7 +84,7 @@ const Products = () => {
       quant: 1,
     },
     {
-      id: 0,
+      id: 8,
       name: "torta",
       description: "descrição da torta aqui por favor",
       image: img9,
@@ -87,6 +92,16 @@ const Products = () => {
       quant: 1,
     },
   ];
+
+  const [newProduct, setNewProduct] = useState("");
+  const dispatch = useDispatch();
+
+  const handleChange = (id) => {
+    const product = products.find((element) => element.id === id);
+    setNewProduct(product);
+    dispatch(addCarrinhoThunk(newProduct));
+  };
+
   return (
     <>
       <Menu />
@@ -97,14 +112,18 @@ const Products = () => {
             <hr />
           </div>
           <Vitrine>
-            {product.map((item, index) => (
+            {products.map((item, index) => (
               <CardProduct
                 key={index}
+                id={item.id}
                 name={item.name}
                 image={item.image}
                 price={item.price}
                 colorSchema="adicionar"
-              />
+                handleChange={handleChange}
+              >
+                Adicionar
+              </CardProduct>
             ))}
           </Vitrine>
         </Content>
