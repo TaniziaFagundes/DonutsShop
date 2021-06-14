@@ -13,8 +13,8 @@ import img8 from "../../assets/ImgProduct/018.jpeg";
 import img9 from "../../assets/ImgProduct/019.jpeg";
 
 //redux thunk
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { addCarrinhoThunk } from "../../store/modules/cart/thunk";
 
 const Products = () => {
@@ -97,11 +97,12 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const handleChange = (id) => {
-    const product = products.find((element) => element.id === id);
-    setNewProduct(product);
-    dispatch(addCarrinhoThunk(newProduct));
+    setNewProduct(products.find((element) => element.id === id));
   };
 
+  useEffect(() => {
+    dispatch(addCarrinhoThunk(newProduct));
+  }, [newProduct]);
   return (
     <>
       <Menu />

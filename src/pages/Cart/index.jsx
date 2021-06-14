@@ -7,39 +7,56 @@ import Popup from "../../components/PopUp";
 import CartTotal from "../../components/CardTotal";
 import CardProduct from "../../components/CardProduct";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeCarrinhoThunk } from "../../store/modules/cart/thunk";
+import Products from "../Product";
+import { useEffect } from "react";
 
 const Cart = () => {
   const [solicitar, setSolicitar] = useState(false);
-
+  const [remove, setRemove] = useState("");
   const cart = useSelector((state) => state.cart);
-
+  const dispatch = useDispatch();
+  console.log(cart);
   const handleClickPopUp = () => {
     setSolicitar(true);
   };
 
-  const handleChange = () => {
-    //chamar funcão que remove
+  const handleChange = (id) => {
+    setRemove(id);
   };
+
+  useEffect(() => {
+    dispatch(removeCarrinhoThunk(remove));
+  }, [remove]);
+
   return (
     <>
       <Menu />
       <Container>
         <Content>
+          <div>
+            <h5>Seu Carrinho</h5>
+            <hr />
+          </div>
           <Vitrine>
-            {cart.map((item, index) => (
-              <CardProduct
-                key={index}
-                id={item.id}
-                name={item.name}
-                image={item.image}
-                price={item.price}
-                colorSchema="remover"
-                handleChange={handleChange}
-              >
-                Remover
-              </CardProduct>
-            ))}
+            {cart.map((item, index) =>
+              item !== "" ? (
+                <CardProduct
+                  key={index}
+                  id={item.id}
+                  name={item.name}
+                  image={item.image}
+                  price={item.price}
+                  colorSchema="remover"
+                  handleChange={handleChange}
+                >
+                  Remover
+                </CardProduct>
+              ) : (
+                ""
+              )
+            )}
           </Vitrine>
           <CartTotal handleClickPopUp={handleClickPopUp} />
         </Content>

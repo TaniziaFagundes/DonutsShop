@@ -1,4 +1,4 @@
-import { addCarrinho } from "./actions";
+import { addCarrinho, removeCarrinho } from "./actions";
 
 export const addCarrinhoThunk = (product) => {
   return (dispatch, getState) => {
@@ -6,5 +6,17 @@ export const addCarrinhoThunk = (product) => {
     const updateCarrinho = [...cart, product];
 
     dispatch(addCarrinho(updateCarrinho));
+  };
+};
+
+export const removeCarrinhoThunk = (product) => {
+  return (dispatch, getState) => {
+    const { cart } = getState();
+    const updateCarrinho = [
+      ...cart.filter((item, index) => {
+        return item.id !== product;
+      }),
+    ];
+    dispatch(removeCarrinho(updateCarrinho));
   };
 };
