@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Background from "../../assets/Rectangle.svg";
 
 export const Container = styled.div`
-  position: absolute;
+  position: relative;
   bottom: auto;
   width: 100%;
 `;

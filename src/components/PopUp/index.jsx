@@ -3,9 +3,21 @@ import Button from "../Button";
 import Donnut from "../../assets/donut.svg";
 import Closed from "../../assets/close.png";
 
+import ReactWhatsapp from "react-whatsapp";
+import { toast } from "react-toastify";
 const PopUpCadastro = ({ solicitar, setSolicitar }) => {
   const handleClosed = () => {
     setSolicitar(false);
+  };
+
+  const handleSend = () => {
+    <ReactWhatsapp number="" message="" />;
+    setSolicitar(false);
+    localStorage.clear();
+    toast.success("Pedido Enviado!!", {
+      autoClose: 2000,
+      position: "top-center",
+    });
   };
 
   return solicitar ? (
@@ -23,7 +35,7 @@ const PopUpCadastro = ({ solicitar, setSolicitar }) => {
         <Input>
           <label>Seu Nome</label>
           <input></input>
-          <Button onClick={() => handleClosed()} colorSchema="Enviar Pedido">
+          <Button onClick={() => handleSend()} colorSchema="Enviar Pedido">
             Enviar Pedido
           </Button>
         </Input>

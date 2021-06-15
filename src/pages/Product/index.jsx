@@ -107,11 +107,11 @@ const Products = () => {
     <>
       <Menu />
       <Container>
+        <div>
+          <h5>Vitrine de Doces</h5>
+          <hr />
+        </div>
         <Content>
-          <div>
-            <h5>Vitrine de Doces</h5>
-            <hr />
-          </div>
           <Vitrine>
             {products.map((item, index) => (
               <CardProduct

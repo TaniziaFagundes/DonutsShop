@@ -13,8 +13,9 @@ const CardProduct = ({
   return (
     <Container>
       <img src={image} alt={image}></img>
-      <h6>{name}</h6>
+
       <div>
+        <h6>{name}</h6>
         <span>R$ {price}</span>
         <Button colorSchema={colorSchema} onClick={() => handleChange(id)}>
           {children}

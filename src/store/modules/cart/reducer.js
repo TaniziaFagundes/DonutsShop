@@ -1,4 +1,6 @@
-const cartReducer = (state = [], action) => {
+const localStore = JSON.parse(localStorage.getItem("@KenzieShop:cart")) || [];
+
+const cartReducer = (state = localStore, action) => {
   switch (action.type) {
     case "@KenzieHub_addCarrinho":
       return action.updateCarrinho;

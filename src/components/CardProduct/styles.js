@@ -12,12 +12,14 @@ export const Container = styled.div`
 
   div {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
   }
 
   span {
     font-size: 1.1rem;
+    margin: 0.5rem;
   }
 
   button {

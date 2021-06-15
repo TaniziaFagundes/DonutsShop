@@ -8,6 +8,7 @@ export const Container = styled.div`
   background-color: var(--white);
   border-radius: 16px;
   margin: 10px;
+  height: 30vh;
 
   h1 {
     background-color: black;
@@ -26,10 +27,5 @@ export const Container = styled.div`
 
   h2 {
     margin: 1.5rem auto;
-  }
-
-  button {
-    width: 5rem;
-    margin: 10px auto;
   }
 `;

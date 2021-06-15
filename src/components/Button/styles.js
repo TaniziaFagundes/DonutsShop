@@ -11,7 +11,7 @@ export const Container = styled.button`
       : ""};
   color: var(--white);
   font-size: 18px;
-  height: 35px;
+  height: 2.5rem;
   border-radius: 8px;
   font-family: "Roboto Mono", monospace;
   font-weight: bold;
@@ -20,7 +20,7 @@ export const Container = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 5rem;
   :hover {
     border: 2px solid var(--blueBlack);
   }
